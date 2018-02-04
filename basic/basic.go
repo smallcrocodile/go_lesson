@@ -52,6 +52,13 @@ func triangle()  {
 	fmt.Println(c)
 }
 
+func calcTriangle(a, b int) int {
+	var c int
+	c = int(math.Sqrt(float64(a*a + b*b)))
+	return c
+}
+
+
 const filename = "abc.txt"
 func consts()  {
 	const a,b  = 3,4
@@ -60,6 +67,14 @@ func consts()  {
 	fmt.Println(filename,c)
 
 }
+
+const (
+	cpp = iota
+	_
+	python
+	golang
+	javascript
+)
 
 const (
 	b = 1 <<(10*iota)
