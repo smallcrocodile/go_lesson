@@ -56,7 +56,6 @@ func main()  {
 	p
 	22333'`
 	printFileContents(strings.NewReader(s))
-
 }
 
 
