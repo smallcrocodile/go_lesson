@@ -3,6 +3,7 @@ package main
 import (
 	"io/ioutil"
 	"fmt"
+	"time"
 )
 
 func main()  {
@@ -17,6 +18,18 @@ func main()  {
 	grade(53),
 	grade(100),
 	grade(99))
+
+
+	var ch1 = make(chan int)
+	var ch2 = make(chan int)
+	go f1(ch1)
+	go f2(ch2)
+	select {
+	case <-ch1:
+		fmt.Println("The first case is selected.")
+	case <-ch2:
+		fmt.Println("The second case is selected.")
+	}
 }
 
 func grade(score int)string  {
@@ -34,4 +47,13 @@ func grade(score int)string  {
 		g = "A"
 	}
 	return g
+}
+
+func f1(ch chan int) {
+	time.Sleep(time.Second * 5)
+	ch <- 1
+}
+func f2(ch chan int) {
+	time.Sleep(time.Second * 10)
+	ch <- 1
 }
