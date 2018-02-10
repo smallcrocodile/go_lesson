@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 
+	"imooc/tree"
 )
 
 type myTreeNode struct {
@@ -30,7 +31,12 @@ func main() {
 	root.Right = &tree.Node{5, nil, nil}
 	root.Right.Left = new(tree.Node)
 	root.Left.Right = tree.CreateNode(2)
+	root.Left.Left = tree.CreateNode(6)
 	root.Right.Left.SetValue(4)
+	root.Right.Left.Print()
+	pRoot := &root
+	pRoot.SetValue(100)
+	root.Print()
 
 	fmt.Print("In-order traversal: ")
 	root.Traverse()
