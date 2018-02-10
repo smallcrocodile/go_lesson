@@ -1,8 +1,8 @@
 package main
 
 import (
-	"imooc/queue"
 	"fmt"
+	"imooc/queue"
 )
 
 func main() {
@@ -17,4 +17,7 @@ func main() {
 	fmt.Println(q.Pop())
 	fmt.Println(q)
 	fmt.Println(q.IsEmpty())
+
+	fmt.Println(q)
+
 }
