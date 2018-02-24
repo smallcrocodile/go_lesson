@@ -26,6 +26,7 @@ func printFile(filename string)  {
 	printFileContents(file)
 }
 
+
 func printFileContents(reader io.Reader) {
 	scanner := bufio.NewScanner(reader)
 	for scanner.Scan() {
