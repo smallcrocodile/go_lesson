@@ -66,7 +66,7 @@ func walk(maze [][]int, start, end point) [][]int {
 				continue
 			}
 			value, ok = next.at(steps)
-			if !ok || value == 1 {
+			if !ok || value != 0 {
 				continue
 			}
 			if next == start {
