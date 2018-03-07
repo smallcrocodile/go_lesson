@@ -4,6 +4,7 @@ import (
 	"imooc/errorhandler/filelistingserver/handler"
 	"log"
 	"net/http"
+	_ "net/http/pprof"
 	"os"
 )
 
