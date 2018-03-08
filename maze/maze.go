@@ -7,7 +7,6 @@ import (
 
 func readMaze(filename string) [][]int {
 	file, err := os.Open(filename)
-	defer file.Close()
 	if err != nil {
 		panic(err)
 	}
@@ -28,7 +27,7 @@ type point struct {
 }
 
 var dirs = [4]point{
-	{-1, 0}, {0, -1}, {1, 0}, {0, 1}}
+	{-1, 0}, {0, -1}, {0, 1}, {1, 0}}
 
 func (p point) add(r point) point {
 	return point{p.i + r.i, p.j + r.j}
@@ -50,17 +49,21 @@ func walk(maze [][]int, start, end point) [][]int {
 		steps[i] = make([]int, len(maze[i]))
 	}
 	Q := []point{start}
+
 	for len(Q) > 0 {
 		cur := Q[0]
 		Q = Q[1:]
+
 		if cur == end {
 			break
 		}
 		for _, dir := range dirs {
 			next := cur.add(dir)
+
 			//maze att next is 0
 			//and steps at next is 0
 			//and next != start
+
 			value, ok := next.at(maze)
 			if !ok || value == 1 {
 				continue
@@ -72,28 +75,35 @@ func walk(maze [][]int, start, end point) [][]int {
 			if next == start {
 				continue
 			}
+
 			curSteps, _ := cur.at(steps)
 			steps[next.i][next.j] = curSteps + 1
 			Q = append(Q, next)
 		}
-
 	}
+
 	return steps
 }
 
 func main() {
 	maze := readMaze("maze/maze.in")
 	for _, row := range maze {
-		for _, val := range row {
-			fmt.Printf("%d ", val)
+		for _, value := range row {
+			fmt.Printf("%3d", value)
 		}
 		fmt.Println()
 	}
-	steps := walk(maze, point{0, 0}, point{len(maze) - 1, len(maze[0]) - 1})
+	fmt.Println()
+	start := point{0, 0}
+	end := point{len(maze) - 1, len(maze[0]) - 1}
+	steps := walk(maze, start, end)
 	for _, row := range steps {
-		for _, val := range row {
-			fmt.Printf("%3d ", val)
+		for _, value := range row {
+			fmt.Printf("%3d", value)
 		}
 		fmt.Println()
 	}
+
+	fmt.Println(steps[end.i][end.j])
+
 }
