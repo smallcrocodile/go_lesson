@@ -72,6 +72,7 @@ func walk(maze [][]int, start, end point) [][]int {
 			if !ok || value != 0 {
 				continue
 			}
+
 			if next == start {
 				continue
 			}
@@ -81,7 +82,6 @@ func walk(maze [][]int, start, end point) [][]int {
 			Q = append(Q, next)
 		}
 	}
-
 	return steps
 }
 
