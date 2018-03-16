@@ -9,15 +9,19 @@ import (
 
 	"log"
 
+	"time"
+
 	"golang.org/x/net/html/charset"
 	"golang.org/x/text/encoding"
 	"golang.org/x/text/encoding/unicode"
 	"golang.org/x/text/transform"
 )
 
-func Fetch(url string) ([]byte, error) {
-	resp, err := http.Get(url)
+var rageLimiter = time.Tick(10 * time.Millisecond)
 
+func Fetch(url string) ([]byte, error) {
+	<-rageLimiter
+	resp, err := http.Get(url)
 	if err != nil {
 		return nil, err
 	}
