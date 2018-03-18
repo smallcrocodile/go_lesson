@@ -18,7 +18,6 @@ func ParseCityList(contents []byte) engine.ParseResult {
 			ParaserFunc: ParseCity,
 		})
 		//fmt.Printf("%s\n %s \n", m[1], m[2])
-
 	}
 	return result
 }
