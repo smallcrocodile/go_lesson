@@ -21,11 +21,10 @@ type ReadyNotifier interface {
 }
 
 func (e *ConcurrentEngine) Run(seeds ...Request) {
-
 	out := make(chan ParseResult)
 	e.Scheduler.Run()
 	for i := 0; i < e.WorkerCount; i++ {
-		createWoker(e.Scheduler.WorkerChan(), out, e.Scheduler)
+		createWorker(e.Scheduler.WorkerChan(), out, e.Scheduler)
 	}
 
 	for _, r := range seeds {
@@ -44,7 +43,7 @@ func (e *ConcurrentEngine) Run(seeds ...Request) {
 	}
 }
 
-func createWoker(in chan Request, out chan ParseResult, ready ReadyNotifier) {
+func createWorker(in chan Request, out chan ParseResult, ready ReadyNotifier) {
 	go func() {
 		for {
 			ready.WokerReady(in)
