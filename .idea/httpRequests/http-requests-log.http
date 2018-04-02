@@ -1,0 +1,180 @@
+GET http://localhost:9200
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-04-02T073154.200.json
+
+###
+
+GET http://localhost:9200/imooc/course/_search
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-04-02T073146.200.json
+
+###
+
+GET http://localhost:9200/imooc/course/_search
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-04-02T045356.200.json
+
+###
+
+GET http://localhost:9200/imooc/course/search
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-04-02T045351.404.json
+
+###
+
+POST http://localhost:9200/imooc/course/2
+Accept: */*
+Cache-Control: no-cache
+
+{            "name": "interview",             "instructor": "jack",  "url":"www.imooc.com"     }
+
+<> 2018-04-02T045335.200.json
+
+###
+
+GET http://localhost:9200/imooc/course/_search
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-04-02T045151.200.json
+
+###
+
+GET http://localhost:9200/imooc/course
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-04-02T045145.400.json
+
+###
+
+GET http://localhost:9200/imooc/course/_search
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-04-02T045140.200.json
+
+###
+
+POST http://localhost:9200/imooc/course
+Accept: */*
+Cache-Control: no-cache
+
+{              "name":"golang_pipelie",              "instructor":"jack",     "url":"www.baidu.com"         }
+
+<> 2018-04-02T045015.201.json
+
+###
+
+POST http://localhost:9200/imooc/course?q=golang&pretty=
+Accept: */*
+Cache-Control: no-cache
+
+{              "name":"golang_pipelie",              "instructor":"jack",     "url":"www.baidu.com"         }
+
+<> 2018-04-02T045004.400.json
+
+###
+
+POST http://localhost:9200/imooc/course/_search?q=golang&pretty=
+Accept: */*
+Cache-Control: no-cache
+
+{              "name":"golang_pipelie",              "instructor":"jack",     "url":"www.baidu.com"         }
+
+<> 2018-04-02T044950.400.json
+
+###
+
+GET http://localhost:9200/imooc/course/_search?q=golang&pretty=
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-04-02T025907.200.json
+
+###
+
+GET http://localhost:9200/imooc/course/_search?q=golang
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-04-02T025842.200.json
+
+###
+
+GET http://localhost:9200/imooc/course/_search
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-04-02T025830.200.json
+
+###
+
+GET http://localhost:9200/imooc/course/_search?q=golang&q=interview
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-04-02T025816.200.json
+
+###
+
+GET http://localhost:9200/imooc/course/_search?q=interview
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-04-02T025746.200.json
+
+###
+
+GET http://localhost:9200/imooc/course/_search
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-04-02T025633.200.json
+
+###
+
+GET http://localhost:9200/imooc/course/2
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-04-02T025619.200.json
+
+###
+
+POST http://localhost:9200/imooc/course/2
+Accept: */*
+Cache-Control: no-cache
+
+{          "name":"interview",         "instructor":"jack"   }
+
+<> 2018-04-02T025606.201.json
+
+###
+
+PUT http://localhost:9200/imooc/course/1
+Accept: */*
+Cache-Control: no-cache
+
+{     "name":"golang",     "instructor":"jack" }
+
+<> 2018-04-02T025441.201.json
+
+###
+
+GET http://localhost:9200
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-04-02T024527.200.json
+
+###
+

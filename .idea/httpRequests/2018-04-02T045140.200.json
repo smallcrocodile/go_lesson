@@ -1,0 +1,47 @@
+{
+  "took": 2,
+  "timed_out": false,
+  "_shards": {
+    "total": 5,
+    "successful": 5,
+    "skipped": 0,
+    "failed": 0
+  },
+  "hits": {
+    "total": 3,
+    "max_score": 1.0,
+    "hits": [
+      {
+        "_index": "imooc",
+        "_type": "course",
+        "_id": "AWKFjM8MxSC2Gu1BHvQb",
+        "_score": 1.0,
+        "_source": {
+          "name": "golang_pipelie",
+          "instructor": "jack",
+          "url": "www.baidu.com"
+        }
+      },
+      {
+        "_index": "imooc",
+        "_type": "course",
+        "_id": "2",
+        "_score": 1.0,
+        "_source": {
+          "name": "interview",
+          "instructor": "jack"
+        }
+      },
+      {
+        "_index": "imooc",
+        "_type": "course",
+        "_id": "1",
+        "_score": 1.0,
+        "_source": {
+          "name": "golang",
+          "instructor": "jack"
+        }
+      }
+    ]
+  }
+}
