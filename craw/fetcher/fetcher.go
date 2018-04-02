@@ -7,8 +7,6 @@ import (
 	"io/ioutil"
 	"net/http"
 
-	"log"
-
 	"time"
 
 	"golang.org/x/net/html/charset"
@@ -40,7 +38,7 @@ func Fetch(url string) ([]byte, error) {
 func determineEncoder(r *bufio.Reader) encoding.Encoding {
 	bytes, err := r.Peek(1024)
 	if err != nil {
-		log.Printf("Fethcer error :%v", err)
+		//log.Printf("Fethcer error :%v", err)
 		return unicode.UTF8
 	}
 	e, _, _ := charset.DetermineEncoding(bytes, "")
