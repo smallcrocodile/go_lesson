@@ -9,7 +9,7 @@ import (
 
 func main() {
 	//http://www.zhenai.com/zhenghun
-	itemChan, err := persist.ItemSaver()
+	itemChan, err := persist.ItemSaver("dating_profile")
 	if err != nil {
 		panic(err)
 	}
@@ -18,9 +18,6 @@ func main() {
 		WorkerCount: 100,
 		ItemChan:    itemChan,
 	}
-	e.Run(engine.Request{Url: "http://www.zhenai.com/zhenghun", ParaserFunc: parser.ParseCityList})
-	//e.Run(engine.Request{
-	//	Url:         "http://www.zhenai.com/zhenghun/shanghai",
-	//	ParaserFunc: parser.ParseCity,
-	//})
+	e.Run(engine.Request{Url: "http://www.zhenai.com/zhenghun", ParserFunc: parser.ParseCityList})
+
 }

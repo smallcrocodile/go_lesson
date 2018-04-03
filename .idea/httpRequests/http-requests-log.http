@@ -1,3 +1,27 @@
+GET http://localhost:9200/dating_profile/zhenai/_search?pretty=&q=1474211863
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-04-03T034307.200.json
+
+###
+
+GET http://localhost:9200/dating_profile/zhenai/_search?pretty=
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-04-03T034248.200.json
+
+###
+
+GET http://localhost:9200/dating_profile/zhenai/_search?pretty=&id=1474211863
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-04-03T034218.400.json
+
+###
+
 GET http://localhost:9200/dating_profile/zhenai/_search?pretty=
 Accept: */*
 Cache-Control: no-cache
@@ -375,32 +399,6 @@ Accept: */*
 Cache-Control: no-cache
 
 <> 2018-04-02T073146.200.json
-
-###
-
-GET http://localhost:9200/imooc/course/_search
-Accept: */*
-Cache-Control: no-cache
-
-<> 2018-04-02T045356.200.json
-
-###
-
-GET http://localhost:9200/imooc/course/search
-Accept: */*
-Cache-Control: no-cache
-
-<> 2018-04-02T045351.404.json
-
-###
-
-POST http://localhost:9200/imooc/course/2
-Accept: */*
-Cache-Control: no-cache
-
-{            "name": "interview",             "instructor": "jack",  "url":"www.imooc.com"     }
-
-<> 2018-04-02T045335.200.json
 
 ###
 

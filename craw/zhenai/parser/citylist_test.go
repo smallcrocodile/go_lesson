@@ -11,7 +11,7 @@ func TestParseCityList(t *testing.T) {
 		panic(err)
 	}
 
-	result := ParseCityList(contents)
+	result := ParseCityList(contents, "http://www.zhenai.com/zhenghun/shanghai")
 
 	const resultSize = 470
 
