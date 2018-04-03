@@ -15,11 +15,12 @@ func ParseCity(contents []byte) engine.ParseResult {
 	result := engine.ParseResult{}
 	for _, m := range amtch {
 		userName := string(m[2])
+		url := string(m[1])
 		//result.Items = append(result.Items, "User: "+userName)
 		result.Requests = append(result.Requests, engine.Request{
-			Url: string(m[1]),
+			Url: url,
 			ParaserFunc: func(c []byte) engine.ParseResult {
-				return ParseProfile(c, userName)
+				return ParseProfile(c, userName, url)
 			},
 		})
 		//fmt.Printf("%s\n %s \n", m[1], m[2])
