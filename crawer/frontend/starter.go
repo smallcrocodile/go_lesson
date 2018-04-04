@@ -7,7 +7,8 @@ import (
 )
 
 func main() {
-	http.Handle("/search", controller.CreateSearchReusltHandler("/frontend/view/template.html"))
+	http.Handle("/", http.FileServer(http.Dir("crawer/frontend/view")))
+	http.Handle("/search", controller.CreateSearchReusltHandler("crawer/frontend/view/template.html"))
 	err := http.ListenAndServe(":8888", nil)
 	if err != nil {
 		panic(err)

@@ -2,6 +2,14 @@ GET http://localhost:9200/dating_profile/_search
 Accept: */*
 Cache-Control: no-cache
 
+<> 2018-04-04T033156.200.json
+
+###
+
+GET http://localhost:9200/dating_profile/_search
+Accept: */*
+Cache-Control: no-cache
+
 <> 2018-04-04T030625-2.200.json
 
 ###
@@ -389,14 +397,6 @@ Accept: */*
 Cache-Control: no-cache
 
 <> 2018-04-03T014627.200.json
-
-###
-
-GET http://localhost:9200/dating_profile/zhenai/_search?pretty=
-Accept: */*
-Cache-Control: no-cache
-
-<> 2018-04-03T014626-2.200.json
 
 ###
 
