@@ -14,7 +14,7 @@ type Profile struct {
 	Occupation string
 	Hukou      string
 	Xingzuo    string
-	Hose       string
+	House      string
 	Car        string
 }
 

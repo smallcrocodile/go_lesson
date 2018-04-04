@@ -1,7 +1,7 @@
 package engine
 
 import (
-	"crawer/fetcher"
+	"imooc/crawer/fetcher"
 	"log"
 )
 

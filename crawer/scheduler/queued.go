@@ -1,7 +1,7 @@
 package scheduler
 
 import (
-	"imooc/craw/engine"
+	"imooc/crawer/engine"
 )
 
 type QueuedScheduler struct {

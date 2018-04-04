@@ -41,4 +41,3 @@ func main() {
 	fmt.Printf("m[%q] after delete: %q, %v\n",
 		"name", name, ok)
 }
-

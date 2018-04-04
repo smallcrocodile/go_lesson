@@ -1,31 +1,30 @@
 package main
 
 import (
-	"strconv"
-	"fmt"
-	"os"
-	"io"
 	"bufio"
+	"fmt"
+	"io"
+	"os"
+	"strconv"
 	"strings"
 )
 
-func convertToBin(n int) string  {
+func convertToBin(n int) string {
 	result := ""
-	for ; n >0; n /=2{
-		lsb := n%2
-		result = strconv.Itoa(lsb)+result
+	for ; n > 0; n /= 2 {
+		lsb := n % 2
+		result = strconv.Itoa(lsb) + result
 	}
 	return result
 }
 
-func printFile(filename string)  {
-	file,err :=os.Open(filename)
+func printFile(filename string) {
+	file, err := os.Open(filename)
 	if err != nil {
 		panic(err)
 	}
 	printFileContents(file)
 }
-
 
 func printFileContents(reader io.Reader) {
 	scanner := bufio.NewScanner(reader)
@@ -33,14 +32,14 @@ func printFileContents(reader io.Reader) {
 		fmt.Println(scanner.Text())
 	}
 }
-func forever()  {
-	for{
+func forever() {
+	for {
 		fmt.Println("abc")
 	}
 
 }
 
-func main()  {
+func main() {
 	fmt.Println("convertToBin results:")
 	fmt.Println(
 		convertToBin(15),
@@ -50,7 +49,6 @@ func main()  {
 	fmt.Println("abc.txt contents:")
 	printFile("abc.txt")
 
-
 	s := `abc "ad"
 	kddd
 	123
@@ -58,6 +56,3 @@ func main()  {
 	22333'`
 	printFileContents(strings.NewReader(s))
 }
-
-
-

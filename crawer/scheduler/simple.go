@@ -1,6 +1,6 @@
 package scheduler
 
-import "imooc/craw/engine"
+import "imooc/crawer/engine"
 
 type SimpleScheduler struct {
 	workerChan chan engine.Request

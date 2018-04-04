@@ -1,8 +1,8 @@
 package parser
 
 import (
-	"imooc/craw/engine"
-	"imooc/craw/model"
+	"imooc/crawer/engine"
+	"imooc/crawer/model"
 	"regexp"
 	"strconv"
 )
@@ -35,7 +35,7 @@ func ParseProfile(contents []byte, name string, url string) engine.ParseResult {
 	profile.Marriage = extractString(contents, marriageRe)
 	profile.Gender = extractString(contents, genderRe)
 	profile.Hukou = extractString(contents, hukouRe)
-	profile.Hose = extractString(contents, hoseRe)
+	profile.House = extractString(contents, hoseRe)
 	profile.Car = extractString(contents, carRe)
 	profile.Xingzuo = extractString(contents, xingzuo)
 	id := extractString([]byte(url), idUrlre)
@@ -51,10 +51,11 @@ func ParseProfile(contents []byte, name string, url string) engine.ParseResult {
 	}
 	matches := guessRe.FindAllSubmatch(contents, -1)
 	for _, m := range matches {
-
+		url := string(m[1])
+		name := string(m[2])
 		result.Requests = append(result.Requests, engine.Request{
-			Url:        string(m[1]),
-			ParserFunc: ProfileParser(string(m[2])),
+			Url:        url,
+			ParserFunc: ProfileParser(name),
 		})
 	}
 

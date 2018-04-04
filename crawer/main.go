@@ -1,10 +1,10 @@
 package main
 
 import (
-	"imooc/craw/engine"
-	"imooc/craw/persist"
-	"imooc/craw/scheduler"
-	"imooc/craw/zhenai/parser"
+	"imooc/crawer/engine"
+	"imooc/crawer/persist"
+	"imooc/crawer/scheduler"
+	"imooc/crawer/zhenai/parser"
 )
 
 func main() {

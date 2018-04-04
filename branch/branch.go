@@ -1,24 +1,23 @@
 package main
 
 import (
-	"io/ioutil"
 	"fmt"
+	"io/ioutil"
 	"time"
 )
 
-func main()  {
+func main() {
 	const filename = "abc.txt"
-	if contents,err :=ioutil.ReadFile(filename);err != nil {
+	if contents, err := ioutil.ReadFile(filename); err != nil {
 		fmt.Println(err)
-	}else {
-		fmt.Printf("%s\n",contents)
+	} else {
+		fmt.Printf("%s\n", contents)
 	}
 
 	fmt.Println(grade(0),
-	grade(53),
-	grade(100),
-	grade(99))
-
+		grade(53),
+		grade(100),
+		grade(99))
 
 	var ch1 = make(chan int)
 	var ch2 = make(chan int)
@@ -32,18 +31,18 @@ func main()  {
 	}
 }
 
-func grade(score int)string  {
+func grade(score int) string {
 	g := ""
-	switch  {
-	case score< 0||score >100:
-		panic(fmt.Sprintf("wrong score :%d",score))
+	switch {
+	case score < 0 || score > 100:
+		panic(fmt.Sprintf("wrong score :%d", score))
 	case score < 60:
 		g = "F"
-	case score<70:
-		 g = "C"
-	case score<80:
+	case score < 70:
+		g = "C"
+	case score < 80:
 		g = "B"
-	case score<=100:
+	case score <= 100:
 		g = "A"
 	}
 	return g

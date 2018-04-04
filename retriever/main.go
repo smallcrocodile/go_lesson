@@ -6,7 +6,6 @@ import (
 
 	"imooc/retriever/mock"
 	"imooc/retriever/real"
-
 )
 
 const url = "http://www.imooc.com"
@@ -64,7 +63,7 @@ func main() {
 }
 
 func inspect(r Retriever) {
-	fmt.Println("Inspecting",r)
+	fmt.Println("Inspecting", r)
 
 	fmt.Printf("%T %v\n", r, r)
 	fmt.Println(r)

@@ -1,7 +1,7 @@
 package parser
 
 import (
-	"imooc/craw/engine"
+	"imooc/crawer/engine"
 	"regexp"
 )
 
@@ -14,9 +14,11 @@ func ParseCity(contents []byte, _ string) engine.ParseResult {
 	amtch := cityre.FindAllSubmatch(contents, -1)
 	result := engine.ParseResult{}
 	for _, m := range amtch {
+		url := string(m[1])
+		name := string(m[2])
 		result.Requests = append(result.Requests, engine.Request{
-			Url:        string(m[1]),
-			ParserFunc: ProfileParser(string(m[2])),
+			Url:        url,
+			ParserFunc: ProfileParser(name),
 		})
 		//fmt.Printf("%s\n %s \n", m[1], m[2])
 	}

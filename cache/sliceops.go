@@ -2,15 +2,15 @@ package main
 
 import "fmt"
 
-func printSlice(s []int)  {
-	fmt.Printf("%v,len=%d,cap=%d\n",s,len(s),cap(s))
+func printSlice(s []int) {
+	fmt.Printf("%v,len=%d,cap=%d\n", s, len(s), cap(s))
 }
-func main()  {
+func main() {
 	var s []int //Zero value for slice is nil
 	fmt.Println(s)
-	for i := 0 ;i <12; i++{
+	for i := 0; i < 12; i++ {
 		printSlice(s)
-		s = append(s,2*i+1)
+		s = append(s, 2*i+1)
 	}
 
 	s1 := []int{2, 4, 6, 8}

@@ -5,8 +5,8 @@ import (
 	"encoding/json"
 	"testing"
 
-	"imooc/craw/engine"
-	"imooc/craw/model"
+	"imooc/crawer/engine"
+	"imooc/crawer/model"
 
 	"gopkg.in/olivere/elastic.v5"
 )
@@ -30,24 +30,22 @@ func TestSaver(t *testing.T) {
 			Car:      "未购车",
 		},
 	}
-
-	//save expected
-	err := save(expected)
-	if err != nil {
-		panic(err)
-	}
-
-	//TODO: Try to start up elastic search
-	//here using docker go client
+	const index = "dating_test"
 	client, err := elastic.NewClient(
+		//Must turn off sniff in docker
 		elastic.SetSniff(false),
 	)
 	if err != nil {
 		panic(err)
 	}
+	//save expected
+	err = save(client, index, expected)
+	if err != nil {
+		panic(err)
+	}
 
 	//fetch expected
-	resp, err := client.Get().Index("dating_profile").Type(expected.Type).Id(expected.Id).Do(context.Background())
+	resp, err := client.Get().Index(index).Type(expected.Type).Id(expected.Id).Do(context.Background())
 	if err != nil {
 		panic(err)
 	}

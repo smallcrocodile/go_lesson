@@ -1,7 +1,7 @@
 package parser
 
 import (
-	"imooc/craw/engine"
+	"imooc/crawer/engine"
 	"regexp"
 )
 
@@ -12,7 +12,12 @@ func ParseCityList(contents []byte, _ string) engine.ParseResult {
 	match := re.FindAllSubmatch(contents, -1)
 	result := engine.ParseResult{}
 	for _, m := range match {
-		//result.Items = append(result.Items, "City "+string(m[2])) })
+		url := string(m[1])
+		//result.Items = append(result.Items, "City "+string(m[2]))
+		result.Requests = append(result.Requests, engine.Request{
+			Url:        url,
+			ParserFunc: ParseCity,
+		})
 		//fmt.Printf("%s\n %s \n", m[1], m[2])
 	}
 	return result
