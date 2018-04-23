@@ -26,7 +26,7 @@ func TestSaver(t *testing.T) {
 			Marriage: "未婚",
 			Hukou:    "内蒙古赤峰",
 			Xingzuo:  "金牛座",
-			Hose:     "自住",
+			House:    "自住",
 			Car:      "未购车",
 		},
 	}
