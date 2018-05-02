@@ -36,7 +36,7 @@ func (e *ConcurrentEngine) Run(seeds ...Request) {
 		result := <-out
 		for _, item := range result.Items {
 			//if profile, ok := item.(model.Profile); ok {
-			//
+			//x
 			//	log.Printf("Got item #%d: %v", profileCount, profile)
 			//}
 			go func() {
