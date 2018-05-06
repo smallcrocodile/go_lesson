@@ -39,7 +39,7 @@ func TestSaver(t *testing.T) {
 		panic(err)
 	}
 	//save expected
-	err = save(client, index, expected)
+	err = Save(client, index, expected)
 	if err != nil {
 		panic(err)
 	}

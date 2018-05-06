@@ -1,3 +1,35 @@
+GET http://localhost:9200/test1/_search
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-05-05T094813.200.json
+
+###
+
+GET http://localhost:9200/test1/_search
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-05-05T094505.404.json
+
+###
+
+GET http://localhost:9200/test1/_search
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-05-05T094437.404.json
+
+###
+
+GET http://localhost:9200/dating_profile/_search
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-05-05T024203.200.json
+
+###
+
 GET http://localhost:9200/dating_profile/_search
 Accept: */*
 Cache-Control: no-cache
@@ -365,38 +397,6 @@ Accept: */*
 Cache-Control: no-cache
 
 <> 2018-04-03T014638.200.json
-
-###
-
-GET http://localhost:9200/dating_profile/zhenai/_search?pretty=
-Accept: */*
-Cache-Control: no-cache
-
-<> 2018-04-03T014637-1.200.json
-
-###
-
-GET http://localhost:9200/dating_profile/zhenai/_search?pretty=
-Accept: */*
-Cache-Control: no-cache
-
-<> 2018-04-03T014637.200.json
-
-###
-
-GET http://localhost:9200/dating_profile/zhenai/_search?pretty=
-Accept: */*
-Cache-Control: no-cache
-
-<> 2018-04-03T014636.200.json
-
-###
-
-GET http://localhost:9200/dating_profile/zhenai/_search?pretty=
-Accept: */*
-Cache-Control: no-cache
-
-<> 2018-04-03T014627.200.json
 
 ###
 
